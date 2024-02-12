@@ -12,28 +12,18 @@
 
   <div class="dasboard">
     <div class="side-bar">
-        <h1>DASHBOARD</h1>
-        <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#news">Property</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li><a href="#about">agent</a></li>
-        </ul>
+        <h1>Dashboard</h1>
+        
        
         </div>
     </div>
-      <div class="content">
-        <header>
-           
-
-            <div class="searhbar">
-                <input type="search" placeholder="Search here">
-                <i class="bi bi-search"></i>
-
-
-            </div>
-        </header>
-
+      <div class="container">
+      <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#news">Property</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#about">Agent</a></li>
+        </ul>
       </div>
 
 
