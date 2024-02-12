@@ -1,6 +1,6 @@
 <?php
 
- $connect = mysqli_connect("localhost","root","","real-state_managemanent");
+ $connect = mysqli_connect("localhost","root","","rsarmp");
 
 
  // if($connect){

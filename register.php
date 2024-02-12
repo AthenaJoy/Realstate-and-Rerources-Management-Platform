@@ -40,7 +40,7 @@
 
      <form action="index.php" method="post">
 
-        <div class="row border rounder-5 p-3 bg-white shadow box-area">
+        <div class="row rounder-5 p-3  shadow box-area" id = "backgroundInput">
 
             <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box " >
                   <div class="features-img mb-3">
@@ -50,6 +50,7 @@
 
             <div class="col-md-6">
                 <div class="row align-items-center ">
+                    <h1> Create Your Account</h1>
                     <div class="input-items mb-3">
                          
 
@@ -82,13 +83,15 @@
                                     
                                     </div>
 
-                                <div class="Sign-in mb-3">
-                                    <button class="btn btn-lg btn-primary form-control w-1000 fs-6"type="submit">Sign in</button>
-                                </div>
+                                    <div class="buttons">
+                                    <div class="login-button mb-3">
+                                            <button class="btn btn-lg btn-primary "type="submit">Login</button>
+                                        </div>
 
-                                <div class="login-button mb-3">
-                                <button class="btn btn-lg btn-primary form-control w-1000 fs-6" type="button" onclick="window.location.href='index.php'">Login</button> 
-                                </div>
+                                        <div class="sign-up mb-3">
+                                        <button class="btn btn-lg btn-primary " type="button" onclick="window.location.href='register.php'">Sign up</button> 
+                                        </div>
+                                    </div>
                 </div>
 
             </div>
