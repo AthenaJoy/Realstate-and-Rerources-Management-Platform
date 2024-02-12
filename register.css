@@ -1,0 +1,24 @@
+body{
+    background-image:url(img/tierra-mallorca-NpTbVOkkom8-unsplash.jpg) ;
+    display: flex;
+    justify-content: center;
+   
+}
+
+.container{
+    background: transparent;
+}
+
+.box-area{
+    width:930px ;
+    background: transparent;
+}
+
+.left-box{
+    background: transparent;
+}
+
+.input{
+    width: 500px;
+}
+

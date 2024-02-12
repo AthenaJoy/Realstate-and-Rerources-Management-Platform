@@ -1,0 +1,105 @@
+/* Reset default browser styles */
+body {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-image: url(img/tierra-mallorca-NpTbVOkkom8-unsplash.jpg);
+}
+
+
+
+.dasboard {
+
+    
+}
+
+
+.side-bar {
+   height: 100%;
+   
+   color: #fff;
+
+   
+
+    background-color: #333;
+   
+    padding-top: 20px;
+}
+
+.side-bar h1 {
+    display: inline;
+    margin-bottom: 20px;
+}
+
+.side-bar ul{
+    
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    border: none;
+
+}
+
+.side-bar  li{
+
+    float: right;
+    margin-left: 50px;
+    margin-right: 50px;
+    
+}
+ .side-bar li a{
+    
+    display: block;
+  padding: 8px;
+  background-color: #dddddd;
+  
+ }
+
+
+
+.content {
+    display: flex;
+    justify-content: center;
+    margin-top: 250px;
+    
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.dash {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Search bar styles */
+.searhbar {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+   
+}
+
+.searhbar input[type="search"] {
+    border: 2px;
+    width: 500px;
+    height: 30px;
+    padding: 6px;
+    font-size: 13px;
+    border-radius: 20px;
+    outline: none;
+    position: relative;
+}
+
+
+
