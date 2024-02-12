@@ -1,7 +1,12 @@
 body{
     background-image:url(img/tierra-mallorca-NpTbVOkkom8-unsplash.jpg) ;
-    display: flex;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+        display: flex;
     justify-content: center;
+    
    
 }
 
@@ -22,3 +27,25 @@ body{
     width: 500px;
 }
 
+#backgroundInput{
+    background: transparent;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+
+.buttons{
+    display: flex;
+    position: relative;
+    left: -30px;
+    
+}
+
+.buttons div button {
+    margin: 20px;
+}
+
+button{
+    width: 200px;
+    
+}

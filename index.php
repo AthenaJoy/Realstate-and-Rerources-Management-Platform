@@ -26,7 +26,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <title>Login Form</title>
@@ -41,7 +41,7 @@
 
      <form action="index.php" method="post">
 
-        <div class="row border rounder-5 p-3 bg-white shadow box-area">
+        <div class="row rounder-5 p-3  shadow box-area" id = "backgroundInput">
 
             <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box " >
                   <div class="features-img mb-3">
@@ -51,6 +51,8 @@
 
             <div class="col-md-6">
                 <div class="row align-items-center ">
+                    <h4>Welcome to </h4>
+                    <h3> Real State and Resources Management Platform</h3>
                     <div class="input-items mb-3">
                          
 
@@ -58,18 +60,22 @@
 
                             
                             </div>
-                            <div class="input-items mb-3">
+                            <div class="input-items mb-3" id = "buttons">
                                     <input type="password" class="input form-control form-control-lg bg-light fs-6" placeholder="Password" id="Password" name="password" required>
                                     
                                     </div>
-                                <div class="login-button mb-3">
-                                    <button class="btn btn-lg btn-primary form-control w-1000 fs-6"type="submit">Login</button>
-                                </div>
 
-                                <div class="sign-up mb-3">
-                                <button class="btn btn-lg btn-primary form-control w-1000 fs-6" type="button" onclick="window.location.href='register.php'">Sign up</button> 
-                                </div>
-                </div>
+                                    <div class="buttons">
+                                    <div class="login-button mb-3">
+                                            <button class="btn btn-lg btn-primary "type="submit">Login</button>
+                                        </div>
+
+                                        <div class="sign-up mb-3">
+                                        <button class="btn btn-lg btn-primary " type="button" onclick="window.location.href='register.php'">Sign up</button> 
+                                        </div>
+                                    </div>
+                                        
+                             </div>
 
             </div>
 
