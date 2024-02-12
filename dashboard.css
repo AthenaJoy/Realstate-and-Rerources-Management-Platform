@@ -8,10 +8,9 @@ body {
 
 
 
-.dasboard {
 
     
-}
+
 
 
 .side-bar {
@@ -56,18 +55,8 @@ body {
     display: block;
   padding: 8px;
   background-color: #dddddd;
-  
  }
-
-
-
-.content {
-    display: flex;
-    justify-content: center;
-    margin-top: 250px;
-    
-}
-
+ 
 header {
     display: flex;
     justify-content: space-between;
@@ -80,26 +69,36 @@ header {
     color: #333;
 }
 
-/* Search bar styles */
-.searhbar {
-    background-color: #fff;
-    border-radius: 20px;
-    padding: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
-   
+.container{
+    margin-top: 18%;
 }
 
-.searhbar input[type="search"] {
-    border: 2px;
-    width: 500px;
-    height: 30px;
-    padding: 6px;
-    font-size: 13px;
-    border-radius: 20px;
-    outline: none;
-    position: relative;
+.container ul{ 
+    display: flex ; 
+    justify-content: space-around;
+    list-style: none;
+    font-size: 30px;
 }
 
+.container ul li a{
+    text-decoration: none;
+    color: black;
+    background-color: white;
+    font-weight: bolder;
+    padding: 40px;
+    border-radius: 10px;    
+
+}
+
+.container ul li a:hover{
+    background-color: black;
+    color: white;
+}
+
+
+
+.container ul li{
+    text-decoration: none;
+}
 
 
