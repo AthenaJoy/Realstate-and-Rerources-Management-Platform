@@ -1,6 +1,6 @@
 <?php
 
- $connect = mysqli_connect("localhost","root","","rsarmp");
+ $connect = mysqli_connect("localhost","root","","rrs");
 
 
  // if($connect){

@@ -1,0 +1,31 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.header{
+    background-color: rgb(16, 97, 41);
+    height: 80px;
+    display: flex;
+    box-shadow: 0 4px 8px rgba(4, 4, 4, 1.1);
+   
+}
+
+.choose ul li a{
+ color: white;
+ text-decoration: none;
+ font-size: 30px;
+}
+
+.choose ul li{
+    margin: 40px;
+    margin-top: -11px;
+}
+
+
+
+.choose ul{
+    padding: 30px;
+    display: flex;
+    list-style: none;
+}
+

@@ -44,21 +44,19 @@ body{
     margin: 15px;
     border-radius: 20px;
     font-size: small;
+    
 }
 
 .main{
     margin-left: 100px;
+    display: flex;
+    margin-top: 200px;
     
 }
 
 
 
 
-
-.section1, .section2, .section3 .box{
-    margin-top: 60px;
-
-}
 
 .title, .logo,.dis{
     display: flex;
@@ -85,4 +83,8 @@ body{
 .box:hover{
     background-color: black;
     
+}
+
+.section2{
+    display: flex;
 }

@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $admin_row = mysqli_fetch_assoc($admin_query);
     if ($admin_row) {
         // Redirect to seller dashboard
-        header("Location: admin\admin/homepage.php");
+        header("Location: admin/homepage.php");
         exit; // Make sure to exit after redirection
     }
 
