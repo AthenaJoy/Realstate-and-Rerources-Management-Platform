@@ -1,0 +1,88 @@
+.header{
+    background-color: rgb(48, 47, 47);
+    height: 80px;
+    display: flex;
+    box-shadow: 0 4px 8px rgba(4, 4, 4, 1.1);
+
+}
+
+.logo img{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin-left: 20%;
+    margin-top: 15%;
+}
+
+.logoutBtn{
+    margin-left: 150px;
+    display: flex;
+    margin-top: 6.5%;
+
+}
+.logoutBtn h5{
+    margin-left: 5%;
+    margin-top:13%;
+    color: white;
+}
+
+#logout{
+    text-decoration: none;   
+    margin-left: 80%;
+    margin-top: 0.2%;
+    
+}
+
+body{
+    background-color: white;
+}
+
+.box{
+    height: 100px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(4, 4, 4, 1.1);
+    margin: 15px;
+    border-radius: 20px;
+    font-size: small;
+}
+
+.main{
+    margin-left: 100px;
+    
+}
+
+
+
+
+
+.section1, .section2, .section3 .box{
+    margin-top: 60px;
+
+}
+
+.title, .logo,.dis{
+    display: flex;
+    justify-content: center;
+}
+
+.title{
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(114, 111, 111);
+}
+
+.dis{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    color: rgb(114, 111, 111);
+}
+
+.box a{
+    text-decoration: none;
+}
+
+.box:hover{
+    background-color: black;
+    
+}

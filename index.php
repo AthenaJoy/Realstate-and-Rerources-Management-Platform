@@ -1,25 +1,38 @@
 <?php
 
-    include("connection/connect.php");
+include("connection/connect.php");
 
-    if($_SERVER["REQUEST_METHOD"] == "POST"){       
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-
-       $sql = "SELECT * FROM user_account";
-       $query=mysqli_query($connect,$sql);
-       
-       
-       while($log = mysqli_fetch_assoc($query)){
-                if($log['email'] == $email && $log['password'] == $password){
-                    header("Location: dashboard.php");
-                }
-       }
+    // Check if the user is a regular user
+    $user_sql = "SELECT * FROM user_account WHERE email = '$email' AND password = '$password'";
+    $user_query = mysqli_query($connect, $user_sql);
+    $user_row = mysqli_fetch_assoc($user_query);
+    if ($user_row) {
+        // Redirect to user dashboard
+        header("Location: user/dashboard.php");
+        exit; // Make sure to exit after redirection
     }
 
+    // Check if the user is an admin or seller
+    $admin_sql = "SELECT * FROM seller_account WHERE email = '$email' AND password = '$password'";
+    $admin_query = mysqli_query($connect, $admin_sql);
+    $admin_row = mysqli_fetch_assoc($admin_query);
+    if ($admin_row) {
+        // Redirect to seller dashboard
+        header("Location: admin\admin/homepage.php");
+        exit; // Make sure to exit after redirection
+    }
+
+    // If no matching user or admin/seller is found, redirect back to login page
+    header("Location: index.php");
+    exit; // Make sure to exit after redirection
+}
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -74,6 +87,8 @@
                                         <button class="btn btn-lg btn-primary " type="button" onclick="window.location.href='register.php'">Sign up</button> 
                                         </div>
                                     </div>
+
+                                   
                                         
                              </div>
 
