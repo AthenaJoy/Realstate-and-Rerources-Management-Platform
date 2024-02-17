@@ -1,6 +1,7 @@
 <?php
-
+session_start();
 include("connection/connect.php");
+include("includes/footer.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
@@ -22,7 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $admin_row = mysqli_fetch_assoc($admin_query);
     if ($admin_row) {
         // Redirect to seller dashboard
-        header("Location: admin/homepage.php");
+
+        $_SESSION['id'] = $admin_row['id'];
+
+        header("Location: admin/homepage.php?");
         exit; // Make sure to exit after redirection
     }
 

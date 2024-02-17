@@ -1,12 +1,12 @@
-<?php
+  <?php
 
- $connect = mysqli_connect("localhost","root","","rrs");
+  $connect = mysqli_connect("localhost","root","","rrs");
 
 
- // if($connect){
+  // if($connect){
 
-     // echo "connected";
-  //}else{
-    //echo "not connected";
-  //}
-?>
+      // echo "connected";
+    //}else{
+      //echo "not connected";
+    //}
+  ?>

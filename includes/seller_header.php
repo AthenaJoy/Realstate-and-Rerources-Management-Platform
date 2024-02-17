@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Real State and Resources Management Platform</title>
     <link rel="stylesheet" href="../includes/seller_header.css">
 </head>
 <body>
@@ -14,10 +14,10 @@
                         <a href="../admin/homepage.php">Home</a>
                        </li> 
                        <li>
-                        <a href="#">Profile</a>
+                        <a href="../admin/profile.php">Profile</a>
                        </li> 
                        <li>
-                        <a href="#">Building Management</a>
+                        <a href="../admin/building_management.php">Building Management</a>
                        </li> 
                        <li>
                         <a href="#">About Us</a>

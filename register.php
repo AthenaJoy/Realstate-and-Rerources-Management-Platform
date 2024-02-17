@@ -1,6 +1,7 @@
 <?php
 
 include("connection/connect.php");
+include("includes/footer.php"); 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
@@ -10,15 +11,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirm_password']; // Corrected typo here
 
+    $defaultProfilepic = "../pictures/profilepic.jpg";
+
     // Check if the user is registering as a seller or user
     if (isset($_POST['seller_register'])) {
         // Seller registration
-        $sql = "INSERT INTO seller_account (name, surname, age, email, password, confirm_password) 
-                VALUES ('$name', '$surname', '$age', '$email', '$password', '$confirmPassword')";
+        $sql = "INSERT INTO seller_account (name, surname, age, email, password, confirm_password,profile_img) 
+                VALUES ('$name', '$surname', '$age', '$email', '$password', '$confirmPassword','$defaultProfilepic')";
     } else {
         // User registration
-        $sql = "INSERT INTO user_account (name, surname, age, email, password, confirm_password) 
-                VALUES ('$name', '$surname', '$age', '$email', '$password', '$confirmPassword')";
+        $sql = "INSERT INTO user_account (name, surname, age, email, password, confirm_password,profile_img) 
+                VALUES ('$name', '$surname', '$age', '$email', '$password', '$confirmPassword','$defaultProfilepic')";
     }
 
     mysqli_query($connect, $sql);

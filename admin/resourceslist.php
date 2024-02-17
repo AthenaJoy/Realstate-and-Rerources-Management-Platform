@@ -1,5 +1,7 @@
 <?php
         include("../includes/BookSeller_header.php");
+        include("../includes/footer.php");
+        
 ?>
 <!DOCTYPE html>
 <html lang="en">
