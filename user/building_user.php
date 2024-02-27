@@ -1,7 +1,25 @@
 <?php
+
 include("../connection/connect.php");
 include("../includes/seller_header.php");
 include("../includes/footer.php");
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Handle form submission
+    $product = $_POST["product_name"];
+    $quantity = $_POST["quantity"];
+
+    // Save to buy history (for demonstration, you might use a database instead)
+    $sql = "INSERT INTO buy_history (product_name, quantity) VALUES ('$product', $quantity)";
+    $query = mysqli_query($connect, $sql);
+    
+    // Check if the query was successful
+    if($query) {
+        echo "<script>alert('Purchase recorded successfully.');</script>";
+    } else {
+        echo "<script>alert('Failed to record purchase.');</script>";
+    }
+}
 
 // Initialize search query
 $search_query = "";
@@ -34,7 +52,7 @@ $query = mysqli_query($connect, $sql);
                 </form>
             </div>
             <div class="col-md-6 text-right">
-                <a href="addproperty.php" class="btn btn-primary">Add Property</a>
+                <a href="buy_history.php" class="btn btn-primary">History</a>
             </div>
         </div>
     </div>
@@ -54,26 +72,20 @@ $query = mysqli_query($connect, $sql);
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $title; ?></h5>
                         <h5 class="card-title">$ <?php echo $price; ?></h5>
-                            <div class="opt">
-                                <div class="sec1">
-                                <a href="viewinfo.php?id=<?php echo $property_id; ?>" class="btn btn-info" style = "width: 230px;">More Information</a>
-                                </div>
-                                <div class="sec2">
-                                <a href="editproperty.php?id=<?php echo $property_id; ?>" class="btn btn-success" style = "width: 110px; margin-top: 5px;">Edit</a>
-                                  <a href="delete.php?id=<?php echo $property_id; ?>" class="btn btn-danger" style = "width: 110px; margin-top: 5px;" >delete</a>
-                                </div>
+                        <div class="opt">
+                            <div class="sec1">
+                                <a href="userview.php?id=<?php echo $property_id; ?>" class="btn btn-info" style="width: 230px;">More Information</a>
                             </div>
+                            
+                        </div>
                     </div>
                 </div>
             </div>
-
-           
             <?php } ?>
         </div>
     </div>
 
-
-    <div class="div" style = "margin-top: 60px;"></div>
+    <div class="div" style="margin-top: 60px;"></div>
 
     <!-- Bootstrap JS and jQuery (Optional) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

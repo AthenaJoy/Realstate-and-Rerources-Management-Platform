@@ -1,5 +1,5 @@
 <?php
-    include("../includes/seller_header.php");
+    include("../includes/user_header.php");
     include("../includes/footer.php");
 ?>
 <!DOCTYPE html>

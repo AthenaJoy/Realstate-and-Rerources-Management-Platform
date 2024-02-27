@@ -6,7 +6,7 @@ include("../includes/footer.php");
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     // Prepare the SQL statement
-    $stmt = $connect->prepare("INSERT INTO propertylist (title, description, type, stype, bedroom, bathroom, balcony, kitchen, hall, floor, size, price, location, city, state) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt = $connect->prepare("INSERT INTO propertylist (title, description, type, stype, bedroom, bathroom, balcony, kitchen, hall, floor, size, price, location, city, state,image1) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
 
     // Set parameters from form data
     $title = $_POST["title"];
@@ -24,9 +24,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $location = $_POST["location"];
     $city = $_POST["city"];
     $state = $_POST["state"];
+    $agent = $_POST["agent"];
+    $contact = $_POST["contact"];
+    $pic = "../pictures/".$_POST["pic"];
 
     // Bind parameters to the statement
-    $stmt->bind_param("ssssiiiiissssss", $title, $description, $property_type, $transaction_type, $bedrooms, $bathrooms, $balconies, $kitchen, $hall, $floor, $size, $price, $location, $city, $state);
+    $stmt->bind_param("ssssiiiiisssssssis", $title, $description, $property_type, $transaction_type, $bedrooms, $bathrooms, $balconies, $kitchen, $hall, $floor, $size, $price, $location, $city, $state,$agent,$contact,$pic);
 
     // Execute the statement
     if ($stmt->execute()) {
@@ -55,7 +58,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         .container{
             margin-top: 10px;
             font-size: 17px;
-            border:2px solid rgb(79, 118, 248);
+            border:2px solid 
+
+            rgb(79, 118, 248);
             border-radius:30px;
             width: 100%; /* fixed width */
         }
@@ -135,6 +140,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                         <label for="state">State:</label>
                         <input type="text" class="form-control" id="state" name="state">
                     </div>
+
+                    <div class="form-group">
+                        <label for="agent">Agent:</label>
+                        <input type="text" class="form-control" id="agent" name="agent">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contact">Contact:</label>
+                        <input type="text" class="form-control" id="contact" name="contact">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">Picture of the building:</label>
+                        <input type="file" class="form-control" id="state" name="pic">
+                    </div>
+                    
                     
                     <input type="submit" class="btn btn-primary" value = "Add Property">
                 </div>

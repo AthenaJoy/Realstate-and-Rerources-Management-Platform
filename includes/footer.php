@@ -10,6 +10,7 @@
         body{
                 margin:0px;
                 padding:0px;
+                
         }
         .containerT{
                 width: 100vw;
@@ -18,8 +19,10 @@
                 background-color: rgb(79, 118, 248);
                 color: white;
                 height: 30px;
-                position:absolute;
+                position:fixed;
                 bottom: 0px;
+                z-index: 1000;
+                
         }
 
         .containerT span{

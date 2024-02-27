@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_row = mysqli_fetch_assoc($user_query);
     if ($user_row) {
         // Redirect to user dashboard
+        $_SESSION['id'] = $user_row['id'];
         header("Location: user/dashboard.php");
         exit; // Make sure to exit after redirection
     }
@@ -62,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box " >
                   <div class="features-img mb-3">
-                    <img src="img/pic2.jpg"  class="img-fluid" style="width: 250px">
+                    <img src="img/book.jpg"  class="img-fluid" style="width: 250px">
                   </div>
             </div>
 

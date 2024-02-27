@@ -1,90 +1,108 @@
 .header{
-    background-color: rgb(48, 47, 47);
+    background-color: rgb(68, 107, 206);
     height: 80px;
     display: flex;
     box-shadow: 0 4px 8px rgba(4, 4, 4, 1.1);
-
-}
-
-.logo img{
+  
+  }
+  
+  .logo img{
     width: 60px;
     height: 60px;
     border-radius: 10px;
     margin-left: 20%;
     margin-top: 15%;
-}
-
-.logoutBtn{
-    margin-left: 150px;
+  }
+  
+  .logoutBtn{
+    margin-left: 100px;
     display: flex;
     margin-top: 6.5%;
-
-}
-.logoutBtn h5{
+  
+  }
+  .logoutBtn h5{
     margin-left: 5%;
     margin-top:13%;
     color: white;
-}
-
-#logout{
+  }
+  
+  #logout{
     text-decoration: none;   
     margin-left: 80%;
     margin-top: 0.2%;
     
-}
-
-body{
+  }
+  
+  body{
     background-color: white;
-}
-
-.box{
-    height: 100px;
-    width: 250px;
+  }
+  
+  .box{
+    height:  400px;
+    width: 400px;
     box-shadow: 0 4px 8px rgba(4, 4, 4, 1.1);
-    margin: 15px;
+    margin: 55px;
     border-radius: 20px;
     font-size: small;
+    margin-top: -80px;
+    margin-left: 100px;
     
-}
-
-.main{
+  }
+  
+  .box .title{
+    margin-top: 90px;
+  }
+  
+  .main{
     margin-left: 100px;
     display: flex;
     margin-top: 200px;
     
-}
-
-
-
-
-
-.title, .logo,.dis{
+  }
+  
+  .textTitle{
+    color: white;
+  }
+  
+  .textTitle h4{
+    width:900px;
+    margin-left: 40px;
+    margin-top: 21px;
+    position: absolute;
+  }
+  
+  
+  
+  
+  .title, .logo,.dis{
     display: flex;
     justify-content: center;
-}
-
-.title{
-    font-size: 30px;
+  }
+  
+  .title{
+    font-size: 40px;
     font-weight: bold;
     color: rgb(114, 111, 111);
-}
-
-.dis{
+  }
+  
+  .dis{
     padding: 20px;
     display: flex;
     justify-content: center;
     color: rgb(114, 111, 111);
-}
-
-.box a{
+  }
+  
+  .box a{
     text-decoration: none;
-}
-
-.box:hover{
+  }
+  
+  .box:hover{
     background-color: black;
     
-}
-
-.section2{
+  }
+  
+  .section2{
     display: flex;
-}
+  }
+  
+  
