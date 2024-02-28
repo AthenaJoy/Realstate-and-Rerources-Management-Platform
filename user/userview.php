@@ -1,7 +1,30 @@
 <?php
+session_start();
 include("../connection/connect.php");
 include("../includes/user_header.php");
 include("../includes/footer.php");
+
+
+
+
+if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $user_id = $_SESSION['id'];
+        $property_id = $_POST['property_id'];
+        $title = $_POST['title'];
+        $price = $_POST['price'];
+        $type = $_POST['type'];
+        $location = $_POST['location'];
+        $city = $_POST['city'];
+        $state = $_POST['state'];
+        $type_payment = $_POST['type_payment'];
+        
+
+        $sql = "INSERT INTO buy_history (buyer_id,property_id,title,price,type,location,city,state,type_payment) VALUES ('$user_id','$property_id','$title','$price','$type','$location','$city','$state','$type_payment')";
+        mysqli_query($connect,$sql);
+
+        header("Location: building_user.php");
+}
+
 
 // Check if property ID is provided in the URL
 if(isset($_GET['id'])) {
@@ -62,10 +85,19 @@ if(isset($_GET['id'])) {
                     </table>
                     <div class="sec2">
                                 <!-- Add the Buy button -->
-                                <form action="buy_history.php" method="post">
-                                    <input type="hidden" name="property_name" value="<?php echo $title; ?>">
-                                    <input type="hidden" name="quantity" value="1"> <!-- Assuming 1 unit is being bought -->
-                                    <button type="submit" class="btn btn-danger" style="width: 110px; margin-top: 5px;">Buy</button>
+                                <form action="userview.php" method="post">
+
+                               
+                                <input type="hidden" name="property_id" value="<?php echo $property['id']; ?>">
+                                <input type="hidden" name="title" value="<?php echo $property['title']; ?>">
+                                <input type="hidden" name="price" value="<?php echo $property['price']; ?>">
+                                <input type="hidden" name="type" value="<?php echo $property['type']; ?>">
+                                <input type="hidden" name="location" value="<?php echo $property['location']; ?>">
+                                <input type="hidden" name="city" value="<?php echo $property['city']; ?>">
+                                <input type="hidden" name="state" value="<?php echo $property['state']; ?>">
+                                <input type="hidden" name="type_payment" value="<?php echo $property['stype']; ?>">
+                              
+                                    <input type="submit" class="btn btn-danger" style="width: 110px; margin-top: 5px;" value = "BUY">
                                 </form>
 
                             </div>
@@ -77,7 +109,5 @@ if(isset($_GET['id'])) {
     } else {
         echo "<p>Property not found.</p>";
     }
-} else {
-    echo "<p>Property ID not provided.</p>";
-}
+} 
 ?>
