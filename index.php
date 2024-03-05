@@ -6,19 +6,10 @@ include("includes/footer.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $decide = $_POST['select'];
 
-    // Check if the user is a regular user
-    $user_sql = "SELECT * FROM user_account WHERE email = '$email' AND password = '$password'";
-    $user_query = mysqli_query($connect, $user_sql);
-    $user_row = mysqli_fetch_assoc($user_query);
-    if ($user_row) {
-        // Redirect to user dashboard
-        $_SESSION['id'] = $user_row['id'];
-        header("Location: user/dashboard.php");
-        exit; // Make sure to exit after redirection
-    }
-
-    // Check if the user is an admin or seller
+    if($decide == "seller"){
+         // Check if the user is an admin or seller
     $admin_sql = "SELECT * FROM seller_account WHERE email = '$email' AND password = '$password'";
     $admin_query = mysqli_query($connect, $admin_sql);
     $admin_row = mysqli_fetch_assoc($admin_query);
@@ -34,6 +25,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // If no matching user or admin/seller is found, redirect back to login page
     header("Location: index.php");
     exit; // Make sure to exit after redirection
+    }else{
+
+           // Check if the user is a regular user
+    $user_sql = "SELECT * FROM user_account WHERE email = '$email' AND password = '$password'";
+    $user_query = mysqli_query($connect, $user_sql);
+    $user_row = mysqli_fetch_assoc($user_query);
+    if ($user_row) {
+        // Redirect to user dashboard
+        $_SESSION['id'] = $user_row['id'];
+        header("Location: user/dashboard.php");
+        exit; // Make sure to exit after redirection
+    }
+    }
+    
+
+ 
+
+   
 }
 
 ?>
@@ -81,6 +90,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="input-items mb-3" id = "buttons">
                                     <input type="password" class="input form-control form-control-lg bg-light fs-6" placeholder="Password" id="Password" name="password" required>
                                     
+                                    </div>
+                                    <div class="select">
+                                    <select class="btn btn-primary" name="select" id="selectOption">
+                                        <option value="seller">Seller</option>
+                                        <option value="buyer">Buyer</option>
+                                    </select>
                                     </div>
 
                                     <div class="buttons">

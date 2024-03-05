@@ -10,18 +10,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirmPassword = $_POST['confirm_password']; // Corrected typo here
+    $decide = $_POST['select'];
 
     $defaultProfilepic = "../pictures/profilepic.jpg";
 
-    // Check if the user is registering as a seller or user
-    if (isset($_POST['seller_register'])) {
-        // Seller registration
+    if($decide == "seller"){
+                 // Seller registration
         $sql = "INSERT INTO seller_account (name, surname, age, email, password, confirm_password,profile_img) 
-                VALUES ('$name', '$surname', '$age', '$email', '$password', '$confirmPassword','$defaultProfilepic')";
-    } else {
-        // User registration
+        VALUES ('$name', '$surname', '$age', '$email', '$password', '$confirmPassword','$defaultProfilepic')";
+    }else{
+             // User registration
         $sql = "INSERT INTO user_account (name, surname, age, email, password, confirm_password,profile_img) 
-                VALUES ('$name', '$surname', '$age', '$email', '$password', '$confirmPassword','$defaultProfilepic')";
+        VALUES ('$name', '$surname', '$age', '$email', '$password', '$confirmPassword','$defaultProfilepic')";
     }
 
     mysqli_query($connect, $sql);
@@ -69,10 +69,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="input-items mb-3">
                         <input type="password" class="input form-control form-control-lg bg-light fs-6" placeholder="Confirm Password" id="Confirm-Password" name="confirm_password" required>
                     </div>
-                    <div class="input-items mb-3">
-                        <label for="seller_register">Register as Seller</label>
-                        <input type="checkbox" id="seller_register" name="seller_register">
                     </div>
+                                    <div class="select">
+                                    <select class="btn btn-primary" name="select" id="selectOption">
+                                        <option value="seller">Seller</option>
+                                        <option value="buyer">Buyer</option>
+                                    </select>
+                                    </div>
                     <div class="buttons">
                         <div class="login-button mb-3">
                             <button class="btn btn-lg btn-primary" type="submit">Register</button>

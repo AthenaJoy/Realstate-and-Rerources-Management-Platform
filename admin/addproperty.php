@@ -6,7 +6,7 @@ include("../includes/footer.php");
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     // Prepare the SQL statement
-    $stmt = $connect->prepare("INSERT INTO propertylist (title, description, type, stype, bedroom, bathroom, balcony, kitchen, hall, floor, size, price, location, city, state,image1) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
+    $stmt = $connforMyOnlineDb->prepare("INSERT INTO propertylist (title, description, type, stype, bedroom, bathroom, balcony, kitchen, hall, floor, size, price, location, city, state,agent,contact,image1) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?)");
 
     // Set parameters from form data
     $title = $_POST["title"];

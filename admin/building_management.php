@@ -13,7 +13,7 @@ if(isset($_GET['search']) && !empty($_GET['search'])) {
     $sql = "SELECT * FROM propertylist";
 }
 
-$query = mysqli_query($connect, $sql);
+$query = mysqli_query($connforMyOnlineDb, $sql);
 ?>
 
 <!DOCTYPE html>

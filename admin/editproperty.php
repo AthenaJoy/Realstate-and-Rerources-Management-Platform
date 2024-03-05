@@ -9,7 +9,7 @@ if(isset($_GET['id'])) {
     
     // Retrieve property details from the database
     $sql = "SELECT * FROM propertylist WHERE id = $property_id";
-    $query = mysqli_query($connect, $sql);
+    $query = mysqli_query($connforMyOnlineDb, $sql);
     
     if(mysqli_num_rows($query) > 0) {
         $property = mysqli_fetch_assoc($query);
@@ -37,7 +37,7 @@ if(isset($_GET['id'])) {
             // Update the property details in the database
             $update_sql = "UPDATE propertylist SET title = '$title',description = '$description', type='$property_type' ,  stype='$transaction_type', bedroom   ='$bedrooms',bathroom='$bathrooms', balcony='$balconies', kitchen='$kitchen', hall='$hall',floor='$floor', size='$size', price = '$price', location='$location', city='$city',state='$state', agent='$agent', contact='$contact' WHERE id = $property_id";
 
-            $update_query = mysqli_query($connect, $update_sql);
+            $update_query = mysqli_query($connforMyOnlineDb, $update_sql);
             
             if($update_query) {
                 echo "<script>alert('Property details updated successfully!');</script>";

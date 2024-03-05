@@ -9,7 +9,7 @@ if(isset($_GET['id'])) {
     
     // Retrieve property details from the database
     $sql = "SELECT * FROM propertylist WHERE id = $property_id";
-    $query = mysqli_query($connect, $sql);
+    $query = mysqli_query($connforMyOnlineDb, $sql);
     
     if(mysqli_num_rows($query) > 0) {
         $property = mysqli_fetch_assoc($query);

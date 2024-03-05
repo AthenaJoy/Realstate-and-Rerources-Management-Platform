@@ -5,7 +5,7 @@
             $id = $_GET['id'];
 
                 $sql = "DELETE FROM propertylist WHERE id = $id";
-                mysqli_query($connect,$sql);
+                mysqli_query($connforMyOnlineDb,$sql);
 
                 header("Location: building_management.php");
         }

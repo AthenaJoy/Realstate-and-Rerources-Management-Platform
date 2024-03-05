@@ -1,7 +1,7 @@
 <?php
 
 include("../connection/connect.php");
-include("../includes/seller_header.php");
+include("../includes/user_header.php");
 include("../includes/footer.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -31,7 +31,7 @@ if(isset($_GET['search']) && !empty($_GET['search'])) {
     $sql = "SELECT * FROM propertylist";
 }
 
-$query = mysqli_query($connect, $sql);
+$query = mysqli_query($connforMyOnlineDb, $sql);
 ?>
 
 <!DOCTYPE html>

@@ -46,7 +46,7 @@
                                 <a class="nav-link" href="../user/profile_user.php"><i class="fas fa-user"></i> Profile</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../user/building_user.php"><i class="fas fa-building"></i> Property Management</a>
+                                <a class="nav-link" href="../user/building_user.php"><i class="fas fa-building_user"></i> Property Management</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#"><i class="fas fa-bell"></i> Notification</a>
