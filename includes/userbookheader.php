@@ -46,7 +46,7 @@
                                 <a class="nav-link" href="../admin/profileBookseller.php"><i class="fas fa-user"></i> Profile</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="../admin/filelist.php"><i class="fas fa-building"></i> Files Management</a>
+                                <a class="nav-link" href="../admin/building_management.php"><i class="fas fa-building"></i> Files Management</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#"><i class="fas fa-bell"></i> Notification</a>
