@@ -26,12 +26,12 @@ if(isset($_GET['id'])) {
             $update_query = mysqli_query($connforMyOnlineDb, $update_sql);
             
             if($update_query) {
-                echo "<script>alert('Property details updated successfully!');</script>";
+                echo "<script>alert('File details updated successfully!');</script>";
                 // Redirect to the property listing page
-                header("Location: building_management.php");
+                header("Location: editfile.php");
                 exit();
             } else {
-                echo "<script>alert('Failed to update property details.');</script>";
+                echo "<script>alert('Failed to update file details.');</script>";
             }
         }
 ?>
@@ -45,7 +45,7 @@ if(isset($_GET['id'])) {
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Custom styles here */
-        .property-section {
+        .file-section {
             border-radius: 10px;
             padding: 20px;
             width: 350px;
@@ -59,18 +59,18 @@ if(isset($_GET['id'])) {
         <form method="POST">
             <div class="row" style="margin-top: -50px;">
                 <div class="col-md-6 offset-md-3">
-                    <div class="property-section">
+                    <div class="file-section">
                         <div class="form-group">
                             <label for="title">Title:</label>
-                            <input type="text" class="form-control" id="title" name="title" value="<?php echo $property['title']; ?>">
+                            <input type="text" class="form-control" id="title" name="title" value="<?php echo $file_list['title']; ?>">
                         </div>
                         <div class="form-group">
                             <label for="description">Description:</label>
-                            <textarea class="form-control" id="description" name="description"><?php echo $property['description']; ?></textarea>
+                            <textarea class="form-control" id="description" name="description"><?php echo $file_list['description']; ?></textarea>
                         </div>
                         <div class="form-group">
                             <label for="price">Price:</label>
-                            <input type="text" class="form-control" id="price" name="price" value="<?php echo $property['price']; ?>">
+                            <input type="text" class="form-control" id="price" name="price" value="<?php echo $file_list['price']; ?>">
                         </div>
                         <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                     </div>
@@ -88,9 +88,9 @@ if(isset($_GET['id'])) {
 
 <?php
     } else {
-        echo "<p>Property not found.</p>";
+        echo "<p>File not found.</p>";
     }
 } else {
-    echo "<p>Property ID not provided.</p>";
+    echo "<p>File ID not provided.</p>";
 }
 ?>

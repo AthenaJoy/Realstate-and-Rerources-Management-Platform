@@ -56,12 +56,9 @@ $query = mysqli_query($connforMyOnlineDb, $sql);
                         <h5 class="card-title" style = "display:flex; justify-content:center;">$ <?php echo $price; ?></h5>
                         <div class="opt">
                             <div class="sec1">
-                                <a href="viewinfofile.php?id=<?php echo $file_id; ?>" class="btn btn-info" style="width: 230px;">More Information</a>
+                                <a href="buyFile.php?id=<?php echo $file_id; ?>" class="btn btn-info" style="width: 230px;">More Information</a>
                             </div>
-                            <div class="sec2">
-                                <a href="editfile.php?id=<?php echo $file_id; ?>" class="btn btn-success" style="width: 110px; margin-top: 5px;">Edit</a>
-                                <a href="deletefile.php?id=<?php echo $file_id; ?>" class="btn btn-danger" style="width: 110px; margin-top: 5px;">delete</a>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>

@@ -33,6 +33,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["file"])) {
         echo "Sorry, there was an error uploading your file.";
     }
 }
+
+// Display the uploaded file
+$sql = "SELECT * FROM file_list ORDER BY id DESC LIMIT 1"; // Assuming your table has an 'id' field
+$result = mysqli_query($connforMyOnlineDb, $sql);
+
+if(mysqli_num_rows($result) > 0) {
+    $row = mysqli_fetch_assoc($result);
+    $file_path = $row['file'];
+    echo '<img src="' . $file_path . '" alt="Uploaded File">';
+} else {
+    echo "No file uploaded yet.";
+}
 ?>
 
 <!DOCTYPE html>
