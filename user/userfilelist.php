@@ -1,6 +1,6 @@
 <?php
 include("../connection/connect.php");
-include("../includes/Bookseller_header.php");
+include("../includes/userbookheader.php");
 include("../includes/footer.php");
 
 // Initialize search query
@@ -34,7 +34,7 @@ $query = mysqli_query($connforMyOnlineDb, $sql);
                 </form>
             </div>
             <div class="col-md-6 text-right">
-                <a href="addfile.php" class="btn btn-primary">Add Files</a>
+                <a href="transaction.php" class="btn btn-primary">Transaction</a>
             </div>
         </div>
     </div>

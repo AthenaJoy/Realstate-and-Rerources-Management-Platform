@@ -35,6 +35,8 @@ $query = mysqli_query($connforMyOnlineDb, $sql);
             </div>
             <div class="col-md-6 text-right">
                 <a href="addproperty.php" class="btn btn-primary">Add Property</a>
+                <a href="viewReservation.php" class="btn btn-success">Show Reservation</a>
+                <a href="reports.php" class="btn btn-danger">Show Building Reports</a>
             </div>
         </div>
     </div>

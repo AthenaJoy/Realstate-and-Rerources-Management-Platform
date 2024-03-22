@@ -18,9 +18,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         $state = $_POST['state'];
         $type_payment = $_POST['type_payment'];
         
+        
 
-        $sql = "INSERT INTO buy_history (buyer_id,property_id,title,price,type,location,city,state,type_payment) VALUES ('$user_id','$property_id','$title','$price','$type','$location','$city','$state','$type_payment')";
-        mysqli_query($connect,$sql);
+        $sql = "INSERT INTO transaction_broker (buyer_id,property_id,title,price,type,location,city,state,type_payment) VALUES ('$user_id','$property_id','$title','$price','$type','$location','$city','$state','$type_payment')";
+        mysqli_query($connforMyOnlineDb,$sql);
 
         header("Location: building_user.php");
 }
@@ -44,8 +45,11 @@ if(isset($_GET['id'])) {
                             echo '
                                 <img src = '.$property['image1'].' style = "width: 400px; height: 400px;">
                             ';
+                            
                     ?>
+                   
                 </div>
+               
                 <div class="col-md-6">
                     <h2><?php echo $property['title']; ?></h2>
                     <table class="table table-bordered table-hover table-striped " style = " box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);">
@@ -96,6 +100,7 @@ if(isset($_GET['id'])) {
                                 <input type="hidden" name="city" value="<?php echo $property['city']; ?>">
                                 <input type="hidden" name="state" value="<?php echo $property['state']; ?>">
                                 <input type="hidden" name="type_payment" value="<?php echo $property['stype']; ?>">
+                                
                               
                                     <input type="submit" class="btn btn-danger" style="width: 110px; margin-top: 5px;" value = "BUY">
                                 </form>

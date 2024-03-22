@@ -40,13 +40,13 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ml-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="../user/dashboard.php"><i class="fas fa-home"></i> Home</a>
+                                <a class="nav-link" href="../admin/homepage.php"><i class="fas fa-home"></i> Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="../admin/profileBookseller.php"><i class="fas fa-user"></i> Profile</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link" href="../user/userfilelist.php"><i class="fas fa-building"></i> Files Management</a>
+                            <a class="nav-link" href="../admin/filelist.php"><i class="fas fa-building"></i> Files Management</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#"><i class="fas fa-bell"></i> Notification</a>

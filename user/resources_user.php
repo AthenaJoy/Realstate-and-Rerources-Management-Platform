@@ -1,4 +1,4 @@
-<?php
+ <?php
     include("../includes/userbookheader.php");
     include("../includes/footer.php");
 ?>
@@ -25,7 +25,7 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <h2>Unlock the wealth of knowledge and possibilities within – download the file now to embark on a journey of discovery and enlightenment.</h2>
+                <h2>Unlock the wealth of knowledge and possibilities within – buy the file now to embark on a journey of discovery and enlightenment.</h2>
             </div>
             <div class="col-md-6">
                 <img src="../img/4447248.png" class="img-fluid rounded" alt="Image">

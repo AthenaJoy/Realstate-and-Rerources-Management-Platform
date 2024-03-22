@@ -1,8 +1,8 @@
 <?php
 include("../connection/connect.php");
-include("../includes/seller_header.php");
+include("../includes/user_header.php");
 include("../includes/footer.php");
-?>
+?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,26 +28,36 @@ include("../includes/footer.php");
 </head>
 <body>
     
-    <table class = "container" style=" margin-top: 80px;">
+    <table class = "container" style=" margin-top: 80px; margin-bottom: 50px;">
         <thead>
             <tr>
                 <th>Buyer ID</th>
                 <th>Property ID</th>
                 <th>Title</th>
-                <th>Price</th>
+                <th>Price</th>  
                 <th>Type</th>
                 <th>Location</th>
                 <th>City</th>
                 <th>State</th>
                 <th>Payment</th>
                 <th>Purchase Date</th>
+                <th>Broker</th>
             </tr>
         </thead>
         <tbody>
             <?php
-                    $sql = "SELECT * FROM buy_history";
-                    $query = mysqli_query($connect,$sql);
+                    $sql = "SELECT * FROM transaction_broker";
+                    $query = mysqli_query($connforMyOnlineDb,$sql);
                     while($test = mysqli_fetch_assoc($query)){
+
+                        if(empty($test['broker_name']) && $test['broker_name'] == null){
+                            $broker = "No Selected Broker yet!";
+                        }else{
+                            $broker = $test['broker_name'];
+                        }
+
+
+                       
 
                             echo '
                             <tr>
@@ -62,7 +72,7 @@ include("../includes/footer.php");
                                 <td>'.$test['state'].'</td>
                                 <td>'.$test['type_payment'].'</td>
                                 <td>'.$test['buy_time'].'</td>
-
+                                <td>'.$broker.'</td>
                             </tr>
                             
                             ';
