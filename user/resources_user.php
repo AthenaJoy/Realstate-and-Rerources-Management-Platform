@@ -20,7 +20,7 @@
     <div class="container">
         <div class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
-                <img src="../pictures/104.9-documents-file-icon-iconbunny.jpg" width="100" alt="Logo" style=" margin-top: 2px;">
+                <img src="../pictures/file2.jpg" width="100" alt="Logo" style=" margin-top: 2px;">
             </a>
         </div>
         <div class="row">
@@ -28,7 +28,7 @@
                 <h2>Unlock the wealth of knowledge and possibilities within – buy the file now to embark on a journey of discovery and enlightenment.</h2>
             </div>
             <div class="col-md-6">
-                <img src="../img/4447248.png" class="img-fluid rounded" alt="Image">
+            <img src="../pictures/file 1.jpg" class="img-fluid rounded" alt="Image" style=" height: 380px; margin-left: 100px;">
             </div>
         </div>
     </div>

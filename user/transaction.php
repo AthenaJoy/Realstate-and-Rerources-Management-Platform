@@ -17,6 +17,8 @@ if(isset($_POST['received'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
     
     <style>
         table {
@@ -42,25 +44,21 @@ if(isset($_POST['received'])) {
     </style>
 </head>
 <body>
+
+<a href="userfilelist.php" class="btn btn-secondary" style=" margin-top: 10px; margin-left:10px;">
+    <i class="fas fa-arrow-left"></i> Back
+</a>
+
     
 <div class="button-container" style="margin-right: 60px;">
-    <form method="post" style="display: inline;">
-        <a type="submit" name="pending" href="userpending.php">Pending</a>
+<form method="post" style="display: inline;">
+        <a type="submit" name="pending"  class = "btn btn-success" href="userpending.php">Pending</a>
     </form>
-    
-   <form method="post" style="display: inline;">
-        <a type="submit" name="received" href="userRecieved.php">Received</a>
-    </form> 
+  
 </div>
 
 
-        
-    </form>
-    
-</div>
-
-
-    <table class="container" style="margin-top: 20px;">
+    <table class="container" style="margin-top: 20px; height: 3000px;">
         <thead>
             <tr>
                 <th>Buyer ID</th>
@@ -68,21 +66,22 @@ if(isset($_POST['received'])) {
                 <th>Price</th>
                 <th>Description</th>
                 <th>File</th>
-
-                <th>Transaction</th>
-          
-</tr>
+                <th>Status</th>
+                <th>Delivery Rider</th>
+                
+            </tr>
         </thead>
         <tbody>
             <?php
-            $sql = "SELECT * FROM file_list";
-
+            $sql = "SELECT * FROM payment";
             $query = mysqli_query($connforMyOnlineDb,$sql);
-
-            $query = mysqli_query($connect,$sql);
- 
-
             while($test = mysqli_fetch_assoc($query)){
+
+                if($test['rider'] == null){
+                        $rider = "No Assigned Rider!";
+                }else{
+                        $rider = $test['rider'];
+                }
                 echo '
                 <tr>
                     <td>'.$test['id'].'</td>
@@ -90,20 +89,13 @@ if(isset($_POST['received'])) {
                     <td>'.$test['price'].'</td>
                     <td>'.$test['description'].'</td>
                     <td>'.$test['file'].'</td>
-            
-                
-            
-                    <td>'.$test['rate'].'</td>
-
-
-            </tr>';
-                        }
-                        ?>
-                    </tbody>
-                </table>
-            </body>
-           
-            </html>
-           
-            </html>
-           
+                    <td>Payment Completed</td>
+                    <td>'.$rider.'</td>
+                   
+                </tr>';
+            }
+            ?>
+        </tbody>
+    </table>
+</body>
+</html>

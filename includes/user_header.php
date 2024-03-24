@@ -32,35 +32,32 @@
 </head>
 <body>
    
-       
-
-                <nav class="navbar navbar-expand-lg navbar-light bg-light" >
-                    <h3 >Real Estate Management</h3> 
-                   
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="../user/dashboard.php"><i class="fas fa-home"></i> Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../user/profile_user.php"><i class="fas fa-user"></i> Profile</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="../user/building_user.php"><i class="fas fa-building_user"></i> Property Management</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fas fa-bell"></i> Notification</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fas fa-info-circle"></i> About Us</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+        <h3 >Real Estate Management</h3> 
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="../user/dashboard.php"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../user/profile_user.php"><i class="fas fa-user"></i> Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../user/building_user.php"><i class="fas fa-building"></i> Property Management</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-bell"></i> Notification</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-info-circle"></i> About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     
-
     <!-- Bootstrap scripts (jQuery and Popper.js) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

@@ -47,7 +47,7 @@ if(isset($_POST['received'])) {
 <form method="post" style="display: inline;">
     
    <form method="post" style="display: inline;">
-        <a type="submit" name="received" class = "btn btn-success" href="userRecieved.php">Received</a>
+        <a type="submit" name="received" class = "btn btn-success" href="transaction.php">Received</a>
     </form>
 </div>
 
