@@ -12,6 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // You need to implement this part
 }
 
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,18 +33,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="card mt-4">
                     <div class="card-body">
                        
-                        <a href="viewReservation.php" class="btn btn-primary">Reserve Property</a>.</p>
+                        <a href="broker.php" class="btn btn-primary">Assigned Broker</a>.</p>
                     </div>
                 </div>
             <table class="table table-striped table-hover" style="box-shadow: 0 4px 8px rgba(4, 4, 4, 1.1); margin-top: 10px;">
                 <thead class="table-dark">
                     <tr>
-                        <th>Reservation No.</th>
-                        <th>Building Name</th>
+                        <th>Buyer ID</th>
+                        <th>Property ID</th>
+                        <th>Title</th>
+                        <th>Price</th>  
+                        <th>Type</th>
                         <th>Location</th>
                         <th>City</th>
                         <th>State</th>
-                        <th>Client Fullname</th>
+                        <th>Payment</th>
+                        <th>Purchase Date</th>
+                        <th>Broker</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -56,20 +63,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     while ($test = mysqli_fetch_assoc($query)) {
 
                         $id = $test['id'];
-                        $p_id = $test['p_id'];
                         $count++;
                         echo '
                         <tr>
-                            <td>' . $count . '</td>
-                            <td>' . $test['title'] . '</td>
-                            <td>' . $test['location'] . '</td>
-                            <td>' . $test['city'] . '</td>
-                            <td>' . $test['state'] . '</td>
-                            <td>' . $test['user_reserve'] . '</td>
+                        <td>'.$test['buyer_id'].'</td>
+                        <td>'.$test['property_id'].'</td>
+                        <td>'.$test['title'].'</td>
+                        <td>'.$test['price'].'</td>
+                        <td>'.$test['type'].'</td>
+                        <td>'.$test['location'].'</td>
+                        <td>'.$test['city'].'</td>
+                        <td>'.$test['state'].'</td>
+                        <td>'.$test['type_payment'].'</td>
+                        <td>'.$test['buy_time'].'</td>
+                        <td>'.$broker.'</td>
                             <td>
                                 <form method="post" action="">
-                                    <input type="hidden" name="reservation_id" value="' . $test['id'] . '">
-                                    <a href = "accept.php?id='.$id.'&p_id='.$p_id.'" class = "btn btn-success">Accept</a>
+                                    <input type="hidden" name="broker_id" value="' . $test['id'] . '">
+                                    <a href = "accept.php?id='.$id.'">Accept</a>
                                     <button type="submit" name="reject_reservation" class="btn btn-danger">Reject</button>
                                 </form>
                             </td>

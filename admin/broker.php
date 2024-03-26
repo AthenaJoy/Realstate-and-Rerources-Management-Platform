@@ -4,18 +4,16 @@ include("../connection/connect.php");
 include("../includes/seller_header.php");
 include("../includes/footer.php");
 
-
-$reservation_count = 0;
-if(mysqli_query($connforMyOnlineDb, "DESCRIBE `reservebuilding`")) {
+$broker_count = 0;
+if(mysqli_query($connforMyOnlineDb, "DESCRIBE `transaction_broker`")) {
     // If the table exists, query to get count of pending reservations
-    $reservation_count_query = "SELECT COUNT(*) AS count FROM reservebuilding WHERE status = 'pending'";
-    $reservation_count_result = mysqli_query($connforMyOnlineDb, $reservation_count_query);
-    $reservation_count = mysqli_fetch_assoc($reservation_count_result)['count'];
+    $broker_count_query = "SELECT COUNT(*) AS count FROM transaction_broker WHERE status = 'pending'";
+    $broker_count_result = mysqli_query($connforMyOnlineDb, $broker_count_query);
+    $broker_count = mysqli_fetch_assoc($broker_count_result)['count'];
 } else {
     // If the table doesn't exist, set reservation count to 0
-    $reservation_count = 0;
+    $broker_count = 0;
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,22 +40,27 @@ if(mysqli_query($connforMyOnlineDb, "DESCRIBE `reservebuilding`")) {
         <div class="card-body">
              <!-- Link button for pending -->
                 <div style="margin-top: 10px; margin-bottom: 10px; float: right;">
-                    <a href="pendingReservation.php" class="btn btn-warning"><?php if ($reservation_count > 0) { echo "<span class='badge badge-light'>$reservation_count</span>"; } ?>Pending</a>
+                    <a href="pendingBroker.php" class="btn btn-warning"><?php if ($broker_count > 0) { echo "<span class='badge badge-light'>$broker_count</span>"; } ?>Pending</a>
                 </div>
             <table class="table table-striped table-hover" style="box-shadow: 0 4px 8px rgba(4, 4, 4, 1.1); margin-top: 15px;">
                 <thead class="table-dark">
                     <tr>
-                        <th>Reservation No.</th>
-                        <th>Building Name</th>
+                        <th>Buyer ID</th>
+                        <th>Property ID</th>
+                        <th>Title</th>
+                        <th>Price</th>  
+                        <th>Type</th>
                         <th>Location</th>
                         <th>City</th>
                         <th>State</th>
-                        <th>Client Fullname</th>
+                        <th>Payment</th>
+                        <th>Purchase Date</th>
+                        <th>Broker</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                    $sql = "SELECT * FROM reservebuilding WHERE status = 'accepted'";
+                    $sql = "SELECT * FROM transaction_broker WHERE status = 'accepted'";
                     $query = mysqli_query($connforMyOnlineDb, $sql);
 
                     $count = 0;
@@ -67,12 +70,17 @@ if(mysqli_query($connforMyOnlineDb, "DESCRIBE `reservebuilding`")) {
                         $count++;
                         echo '
                         <tr>
-                                 <td>' . $count . '</td>
-                                <td>' . $test['title'] . '</td>
-                                <td>' . $test['location'] . '</td>
-                                <td>' . $test['city'] . '</td>
-                                <td>' . $test['state'] . '</td>
-                                <td>' . $test['user_reserve'] . '</td>
+                        <td>'.$test['buyer_id'].'</td>
+                        <td>'.$test['property_id'].'</td>
+                        <td>'.$test['title'].'</td>
+                        <td>'.$test['price'].'</td>
+                        <td>'.$test['type'].'</td>
+                        <td>'.$test['location'].'</td>
+                        <td>'.$test['city'].'</td>
+                        <td>'.$test['state'].'</td>
+                        <td>'.$test['type_payment'].'</td>
+                        <td>'.$test['buy_time'].'</td>
+                        <td>'.$broker.'</td>
                         </tr>
                         ';
                     }

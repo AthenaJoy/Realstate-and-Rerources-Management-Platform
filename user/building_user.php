@@ -81,8 +81,26 @@ $query = mysqli_query($connforMyOnlineDb, $sql);
                         <h5 class="card-title">$ <?php echo $price; ?></h5>
                         <div class="opt">
                             <div class="sec1">
-                                <a href="userview.php?id=<?php echo $property_id; ?>" class="btn btn-info" style="width: 230px;">More Information</a>
-                            </div>
+                                      
+                                       <?php
+
+                                                if($check['reserve_status'] == "RESERVED"){
+
+                                                    echo'
+                                                            <h1 style = "margin-left: 18px;">RESERVED</h1>
+                                                    ';
+
+                                                }else{
+                                                    echo '
+                                                    <div class="sec1">
+                                                    <a href="userview.php?id='.$property_id.'" class="btn btn-info" style="width: 230px;">More Information</a>
+                                 
+                                                </div>
+                                              
+                                                    ';
+                                                }
+                                                ?>
+                                </div>
                             
                         </div>
                     </div>

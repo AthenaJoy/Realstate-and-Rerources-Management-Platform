@@ -37,21 +37,16 @@ include("../includes/footer.php");
         </thead>
         <tbody>
             <?php
-                    $sql = "SELECT * FROM report";
-                    $query = mysqli_query($connforMyOnlineDb,$sql);
-
-                    $count = 0;
-
                     while($test = mysqli_fetch_assoc($query)){
-
                         $count++;
-                        echo '
-                        <tr>
-                                 <td>'.$count.'</td>
-                                <td>'.$test['txt'].'</td>
-                                
-                        </tr>
-                        ';
+                        echo '<tr>';
+                        echo '<td>'.$count.'</td>';
+                        if(isset($test['txt'])) {
+                            echo '<td>'.$test['txt'].'</td>';
+                        } else {
+                            echo '<td>txt not found</td>'; // Debugging output
+                        }
+                        echo '</tr>';
                     }
             ?>
         </tbody>
